@@ -1,6 +1,6 @@
 %define name SDL_image
 %define version 1.2.5
-%define release %mkrel 2
+%define release %mkrel 3
 %define lib_name_orig libSDL_image
 %define lib_major 1.2
 %define lib_name %mklibname %name %lib_major
@@ -102,5 +102,3 @@ rm -rf $RPM_BUILD_ROOT
 %{_libdir}/*a
 %{_libdir}/lib*.so
 %{_includedir}/SDL/*
-
-
