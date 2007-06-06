@@ -1,6 +1,6 @@
 %define name SDL_image
 %define version 1.2.5
-%define release %mkrel 3
+%define release %mkrel 4
 %define lib_name_orig libSDL_image
 %define lib_major 1.2
 %define lib_name %mklibname %name %lib_major
