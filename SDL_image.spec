@@ -14,7 +14,7 @@ License: LGPL
 URL: http://www.libsdl.org/projects/SDL_image/index.html
 Group: System/Libraries
 BuildRequires: alsa-lib-devel
-BuildRequires: XFree86-devel
+BuildRequires: X11-devel
 BuildRequires: esound-devel
 BuildRequires: libjpeg-devel
 BuildRequires: libpng-devel
