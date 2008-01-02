@@ -20,6 +20,7 @@ BuildRequires: libjpeg-devel
 BuildRequires: libpng-devel
 BuildRequires: libtiff-devel
 BuildRequires: libSDL-devel >= 1.2.10
+BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-root
 
 %description
 This is a simple library to load images of various formats as SDL surfaces.
