@@ -6,7 +6,7 @@
 Summary:	Simple DirectMedia Layer - image
 Name:		SDL_image
 Version:	1.2.6
-Release:	%mkrel 2
+Release:	%mkrel 3
 License:	LGPLv2+
 Group:		System/Libraries
 URL:		http://www.libsdl.org/projects/SDL_image/index.html
@@ -28,6 +28,7 @@ This package contains the binary `sdlshow' to test the library.
 %package -n %{libname}
 Summary:	Main library for %{name}
 Group:		System/Libraries
+Obsoletes:	%{_lib}SDL_image1.2 < 1.2.6-2
 
 %description -n %{libname}
 This package contains the library needed to run programs dynamically
@@ -40,8 +41,8 @@ Requires:	%{libname} = %{version}-%{release}
 Requires:	libSDL-devel
 Provides:	lib%{name}-devel = %{version}-%{release}
 Provides:	%{name}%{major}-devel = %{version}-%{release}
-Provides:	%mklibname %{name} 1.2 -d
-Obsoletes:	%mklibname %{name} 1.2 -d
+Provides:	%{name}-devel = %{version}-%{release}
+Obsoletes:	%{_lib}SDL_image1.2-devel < 1.2.6-2
 
 %description -n %{develname}
 This package contains the headers that programmers will need to develop
