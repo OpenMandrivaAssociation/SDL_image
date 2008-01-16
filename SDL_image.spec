@@ -6,7 +6,7 @@
 Summary:	Simple DirectMedia Layer - image
 Name:		SDL_image
 Version:	1.2.6
-Release:	%mkrel 3
+Release:	%mkrel 4
 License:	LGPLv2+
 Group:		System/Libraries
 URL:		http://www.libsdl.org/projects/SDL_image/index.html
@@ -51,6 +51,7 @@ applications which will use %{name}.
 %package -n %{libname}-test
 Summary:	Test binary for %{name}
 Group:		System/Libraries
+Obsoletes:	%{_lib}SDL_image1.2-test < 1.2.6-2
 
 %description -n %{libname}-test
 This package contains binary to test the associated library.
