@@ -29,6 +29,7 @@ This package contains the binary `sdlshow' to test the library.
 Summary:	Main library for %{name}
 Group:		System/Libraries
 Obsoletes:	%{_lib}SDL_image1.2 < 1.2.6-2
+Provides:	%name = %version-%release
 
 %description -n %{libname}
 This package contains the library needed to run programs dynamically
