@@ -5,17 +5,12 @@
 
 Summary:	Simple DirectMedia Layer - image
 Name:		SDL_image
-Version:	1.2.6
-Release:	%mkrel 6
+Version:	1.2.7
+Release:	%mkrel 1
 License:	LGPLv2+
 Group:		System/Libraries
 URL:		http://www.libsdl.org/projects/SDL_image/index.html
-Source0:	http://www.libsdl.org/projects/SDL_image/release/%{name}-%{version}.tar.bz2
-#Two security patches from Fedora:
-# CVE-2008-0544 (https://bugzilla.redhat.com/show_bug.cgi?id=430693)
-Patch0:		SDL_image-1.2.6-IMG_lbm.patch
-# CVE-2007-6697 (https://bugzilla.redhat.com/show_bug.cgi?id=430100)
-Patch1:		SDL_image-1.2.6-buffer-overflow.patch
+Source0:	http://www.libsdl.org/projects/SDL_image/release/%{name}-%{version}.tar.gz
 
 BuildRequires:	libalsa-devel
 BuildRequires:	X11-devel
@@ -64,8 +59,7 @@ This package contains binary to test the associated library.
 
 %prep
 %setup -q
-%patch0 -p1 -b .IMG_lbm
-%patch1 -p1 -b .buffer-overflow
+
 %build
 %configure2_5x 	--enable-bmp \
 		--enable-gif \
