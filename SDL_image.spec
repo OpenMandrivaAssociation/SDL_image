@@ -2,11 +2,14 @@
 %define apiver 1.2
 %define libname %mklibname %{name} %{apiver} %{major}
 %define develname %mklibname %{name} -d
+%define libjpeg_version %(rpm -q --whatprovides libjpeg --queryformat="%{VERSION}")
+%define libpng_version %(rpm -q --whatprovides libpng --queryformat="%{VERSION}")
+%define libtiff_version %(rpm -q --whatprovides libtiff --queryformat="%{VERSION}")
 
 Summary:	Simple DirectMedia Layer - image
 Name:		SDL_image
 Version:	1.2.7
-Release:	%mkrel 2
+Release:	%mkrel 3
 License:	LGPLv2+
 Group:		System/Libraries
 URL:		http://www.libsdl.org/projects/SDL_image/index.html
@@ -30,6 +33,10 @@ This package contains the binary `sdlshow' to test the library.
 Summary:	Main library for %{name}
 Group:		System/Libraries
 Obsoletes:	%{_lib}SDL_image1.2 < 1.2.6-2
+# following lines are requires because it dlopen rather than link against those libs
+Requires:       libjpeg = %libjpeg_version
+Requires:       libpng = %libpng_version
+Requires:       libtiff = %libtiff_version
 
 %description -n %{libname}
 This package contains the library needed to run programs dynamically
