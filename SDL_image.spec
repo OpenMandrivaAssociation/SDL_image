@@ -2,14 +2,11 @@
 %define apiver 1.2
 %define libname %mklibname %{name} %{apiver} %{major}
 %define develname %mklibname %{name} -d
-%define libjpeg_name %(rpm -q --whatprovides libjpeg --queryformat="%{NAME}")
-%define libpng_name %(rpm -q --whatprovides libpng --queryformat="%{NAME}")
-%define libtiff_name %(rpm -q --whatprovides libtiff --queryformat="%{NAME}")
 
 Summary:	Simple DirectMedia Layer - image
 Name:		SDL_image
 Version:	1.2.7
-Release:	%mkrel 4
+Release:	%mkrel 5
 License:	LGPLv2+
 Group:		System/Libraries
 URL:		http://www.libsdl.org/projects/SDL_image/index.html
@@ -33,10 +30,6 @@ This package contains the binary `sdlshow' to test the library.
 Summary:	Main library for %{name}
 Group:		System/Libraries
 Obsoletes:	%{_lib}SDL_image1.2 < 1.2.6-2
-# following lines are requires because it dlopen rather than link against those libs
-Requires:       %libjpeg_name
-Requires:       %libpng_name
-Requires:       %libtiff_name
 
 %description -n %{libname}
 This package contains the library needed to run programs dynamically
@@ -68,6 +61,8 @@ This package contains binary to test the associated library.
 %setup -q
 
 %build
+# (anssi) --disable-x-shared disable dlopening, so that we link to them
+# dynamically instead, and thus get correct autorequires
 %configure2_5x 	--enable-bmp \
 		--enable-gif \
 		--enable-jpg \
@@ -75,7 +70,11 @@ This package contains binary to test the associated library.
 		--enable-png \
 		--enable-ppm \
 		--enable-tif \
-		--enable-xpm
+		--enable-xpm \
+		--disable-jpg-shared \
+		--disable-png-shared \
+		--disable-tif-shared
+
 %make
 
 %install
