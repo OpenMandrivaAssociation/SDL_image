@@ -5,8 +5,8 @@
 
 Summary:	Simple DirectMedia Layer - image
 Name:		SDL_image
-Version:	1.2.7
-Release:	%mkrel 5
+Version:	1.2.10
+Release:	%mkrel 1
 License:	LGPLv2+
 Group:		System/Libraries
 URL:		http://www.libsdl.org/projects/SDL_image/index.html
@@ -108,3 +108,4 @@ rm -rf %{buildroot}
 %{_libdir}/*a
 %{_libdir}/lib*.so
 %{_includedir}/SDL/*
+%{_libdir}/pkgconfig/SDL_image.pc
