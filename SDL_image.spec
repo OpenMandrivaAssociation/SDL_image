@@ -11,9 +11,6 @@ License:	LGPLv2+
 Group:		System/Libraries
 URL:		http://www.libsdl.org/projects/SDL_image/index.html
 Source0:	http://www.libsdl.org/projects/SDL_image/release/%{name}-%{version}.tar.gz
-
-BuildRequires:	libalsa-devel
-BuildRequires:	X11-devel
 BuildRequires:	libjpeg-devel
 BuildRequires:	libpng-devel
 BuildRequires:	libtiff-devel
@@ -68,7 +65,6 @@ This package contains binary to test the associated library.
 		--enable-jpg \
 		--enable-pcx \
 		--enable-png \
-		--enable-ppm \
 		--enable-tif \
 		--enable-xpm \
 		--disable-jpg-shared \
