@@ -6,11 +6,12 @@
 Summary:	Simple DirectMedia Layer - image
 Name:		SDL_image
 Version:	1.2.10
-Release:	%mkrel 4
+Release:	%mkrel 5
 License:	LGPLv2+
 Group:		System/Libraries
 URL:		http://www.libsdl.org/projects/SDL_image/index.html
 Source0:	http://www.libsdl.org/projects/SDL_image/release/%{name}-%{version}.tar.gz
+Patch0:		sdl-image-1.2.10-libpng15.patch
 BuildRequires:	libjpeg-devel
 BuildRequires:	libpng-devel
 BuildRequires:	libtiff-devel
@@ -56,6 +57,7 @@ This package contains binary to test the associated library.
 
 %prep
 %setup -q
+%patch0 -p0
 
 %build
 # (anssi) --disable-x-shared disable dlopening, so that we link to them
