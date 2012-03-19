@@ -1,22 +1,20 @@
-%define major 0
-%define apiver 1.2
-%define libname %mklibname %{name} %{apiver} %{major}
-%define develname %mklibname %{name} -d
+%define		major 0
+%define		apiver 1.2
+%define		libname %mklibname %{name} %{apiver} %{major}
+%define		develname %mklibname %{name} -d
 
 Summary:	Simple DirectMedia Layer - image
 Name:		SDL_image
-Version:	1.2.10
-Release:	%mkrel 8
+Version:	1.2.12
+Release:	%mkrel 1
 License:	LGPLv2+
 Group:		System/Libraries
 URL:		http://www.libsdl.org/projects/SDL_image/index.html
 Source0:	http://www.libsdl.org/projects/SDL_image/release/%{name}-%{version}.tar.gz
-Patch0:		sdl-image-1.2.10-libpng15.patch
-BuildRequires:	libjpeg-devel
-BuildRequires:	libpng-devel
-BuildRequires:	libtiff-devel
-BuildRequires:	libSDL-devel >= 1.2.10
-BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-root
+BuildRequires:	jpeg-devel
+BuildRequires:	png-devel
+BuildRequires:	tiff-devel
+BuildRequires:	SDL-devel >= 1.2.10
 
 %description
 This is a simple library to load images of various formats as SDL surfaces.
@@ -37,7 +35,7 @@ linked with %{name}.
 Summary:	Headers for developing programs that will use %{name}
 Group:		Development/C
 Requires:	%{libname} = %{version}-%{release}
-Requires:	libSDL-devel
+Requires:	SDL-devel
 Provides:	lib%{name}-devel = %{version}-%{release}
 Provides:	%{name}%{major}-devel = %{version}-%{release}
 Provides:	%{name}-devel = %{version}-%{release}
@@ -57,7 +55,6 @@ This package contains binary to test the associated library.
 
 %prep
 %setup -q
-%patch0 -p0
 
 %build
 # (anssi) --disable-x-shared disable dlopening, so that we link to them
@@ -71,39 +68,32 @@ This package contains binary to test the associated library.
 		--enable-xpm \
 		--disable-jpg-shared \
 		--disable-png-shared \
-		--disable-tif-shared
+		--disable-tif-shared \
+		--disable-static
 
 %make
 
 %install
-rm -rf %{buildroot}
+%__rm -rf %{buildroot}
 %makeinstall_std
-install -d %{buildroot}%{_bindir}
-install -m755 .libs/showimage %{buildroot}%{_bindir}/sdlshow
+%__install -d %{buildroot}%{_bindir}
+%__install -m755 .libs/showimage %{buildroot}%{_bindir}/sdlshow
 
 %clean
-rm -rf %{buildroot}
-
-%if %mdkversion < 200900
-%post -n %{libname} -p /sbin/ldconfig
-%endif
-
-%if %mdkversion < 200900
-%postun -n %{libname} -p /sbin/ldconfig
-%endif
+%__rm -rf %{buildroot}
 
 %files -n %{libname}-test
-%defattr(-,root,root)
 %{_bindir}/sdlshow
 
 %files -n %{libname}
-%defattr(-,root,root)
 %{_libdir}/lib*%{apiver}.so.%{major}*
 
 %files -n %{develname}
-%defattr(-,root,root)
 %doc README CHANGES
-%{_libdir}/*a
 %{_libdir}/lib*.so
 %{_includedir}/SDL/*
 %{_libdir}/pkgconfig/SDL_image.pc
+%if %{mdvver} < 201200
+%{_libdir}/*.la
+%endif
+
