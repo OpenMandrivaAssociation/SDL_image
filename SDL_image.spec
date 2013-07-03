@@ -6,7 +6,7 @@
 Summary:	Simple DirectMedia Layer - image
 Name:		SDL_image
 Version:	1.2.12
-Release:	3
+Release:	4
 License:	LGPLv2+
 Group:		System/Libraries
 URL:		http://www.libsdl.org/projects/SDL_image/index.html
@@ -14,7 +14,7 @@ Source0:	http://www.libsdl.org/projects/SDL_image/release/%{name}-%{version}.tar
 BuildRequires:	jpeg-devel
 BuildRequires:	pkgconfig(libpng)
 BuildRequires:	tiff-devel
-BuildRequires:	SDL-devel >= 1.2.10
+BuildRequires:	pkgconfig(sdl) >= 1.2.10
 
 %description
 This is a simple library to load images of various formats as SDL surfaces.
@@ -35,7 +35,7 @@ linked with %{name}.
 Summary:	Headers for developing programs that will use %{name}
 Group:		Development/C
 Requires:	%{libname} = %{version}-%{release}
-Requires:	SDL-devel
+Requires:	pkgconfig(sdl) >= 1.2.10
 Provides:	lib%{name}-devel = %{version}-%{release}
 Provides:	%{name}%{major}-devel = %{version}-%{release}
 Provides:	%{name}-devel = %{version}-%{release}
