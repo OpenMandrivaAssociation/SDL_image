@@ -7,7 +7,7 @@
 Summary:	Simple DirectMedia Layer - image
 Name:		SDL_image
 Version:	1.2.12
-Release:	14
+Release:	15
 License:	LGPLv2+
 Group:		System/Libraries
 URL:		http://www.libsdl.org/projects/SDL_image/index.html
@@ -203,16 +203,16 @@ This package contains binary to test the associated library.
 - Build against directfb 1.0
 
 
-* Sat Feb 24 2007 Giuseppe Ghibò <ghibo@mandriva.com> 1.2.5-2mdv2007.0
+* Sat Feb 24 2007 Giuseppe GhibÃ² <ghibo@mandriva.com> 1.2.5-2mdv2007.0
 + Revision: 125366
 - Rebuilt against latest libggi|libgii.
 - Import SDL_image
 
-* Sun Jun 25 2006 G�tz Waschk <waschk@mandriva.org> 1.2.5-1mdv2007.0
+* Sun Jun 25 2006 Götz Waschk <waschk@mandriva.org> 1.2.5-1mdv2007.0
 - bump deps
 - new version
 
-* Thu Jun 22 2006 Götz Waschk <waschk@mandriva.org> 1.2.4-4mdk
+* Thu Jun 22 2006 GÃ¶tz Waschk <waschk@mandriva.org> 1.2.4-4mdk
 - Rebuild
 - use mkrel
 
@@ -222,9 +222,9 @@ This package contains binary to test the associated library.
 * Sat Dec 31 2005 Mandriva Linux Team <http://www.mandrivaexpert.com/> 1.2.4-2mdk
 - Rebuild
 
-* Wed Mar 23 2005 Giuseppe Ghib� <ghibo@mandrakesoft.com> 1.2.4-1mdk
+* Wed Mar 23 2005 Giuseppe Ghibò <ghibo@mandrakesoft.com> 1.2.4-1mdk
 - Release: 1.2.4.
 
-* Wed Mar 23 2005 Giuseppe Ghib� <ghibo@mandrakesoft.com> 1.2.3-4mdk
+* Wed Mar 23 2005 Giuseppe Ghibò <ghibo@mandrakesoft.com> 1.2.3-4mdk
 - Rebuilt.
 
