@@ -7,11 +7,11 @@
 Summary:	Simple DirectMedia Layer - image
 Name:		SDL_image
 Version:	1.2.12
-Release:	18
+Release:	19
 License:	LGPLv2+
 Group:		System/Libraries
-URL:		http://www.libsdl.org/projects/SDL_image/index.html
-Source0:	http://www.libsdl.org/projects/SDL_image/release/%{name}-%{version}.tar.gz
+URL:		https://www.libsdl.org/projects/SDL_image/index.html
+Source0:	https://www.libsdl.org/projects/SDL_image/release/%{name}-%{version}.tar.gz
 Patch0:		SDL_image-1.2.12-fix-build-with-strict-compilers.patch
 BuildRequires:	pkgconfig(libjpeg)
 BuildRequires:	pkgconfig(libpng)
