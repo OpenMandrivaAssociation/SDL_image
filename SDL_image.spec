@@ -13,6 +13,11 @@ Group:		System/Libraries
 URL:		https://www.libsdl.org/projects/SDL_image/index.html
 Source0:	https://www.libsdl.org/projects/SDL_image/release/%{name}-%{version}.tar.gz
 Patch0:		SDL_image-1.2.12-fix-build-with-strict-compilers.patch
+BuildRequires:	autoconf
+BuildRequires:	automake
+BuildRequires:	libtool-base
+BuildRequires:	slibtool
+BuildRequires:	make
 BuildRequires:	pkgconfig(libjpeg)
 BuildRequires:	pkgconfig(libpng)
 BuildRequires:	pkgconfig(libtiff-4)
